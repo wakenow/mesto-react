@@ -20,8 +20,8 @@ Promise.all(dataDownload)
         setUserDescription(userData.about);
         setUserAvatar(userData.avatar);
     })
-    .catch(() => {
-            console.log('error downloading user data');
+    .catch((err) => {
+            console.log(`Error: ${err}`);
          })
   },[]);
 
