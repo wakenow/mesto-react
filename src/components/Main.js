@@ -1,5 +1,5 @@
 import React from 'react';
-import api from '../utils/Api.js';
+import api from '../utils/api.js';
 import Card from './Card';
 
 function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
@@ -19,13 +19,16 @@ Promise.all(dataDownload)
         setUserName(userData.name);
         setUserDescription(userData.about);
         setUserAvatar(userData.avatar);
-    });
+    })
+    .catch(() => {
+            console.log('error downloading user data');
+         })
   },[]);
 
     return (
         <main className="content">
             <section className="profile">
-            <img src={userAvatar}  alt="фото профиля" className="profile__avatar" onClick={onEditAvatar}/>
+            <img src={userAvatar}  alt="Фото профиля" className="profile__avatar" onClick={onEditAvatar}/>
                 <div className="profile__profile-info">
                     <div className="profile__name-wrapper">
                         <h1 className="profile__name">{userName}</h1>

@@ -55,9 +55,9 @@ function App() {
             className="popup__form popup__form_type_name"
             type="text"
             required
-            minlength="2"
-            maxlength="40"
-            autocomplete="off"
+            minLength="2"
+            maxLength="40"
+            autoсomplete="off"
           />
           <span className="popup__error popup__error_type_name"></span>
           <input
@@ -65,9 +65,9 @@ function App() {
             className="popup__form popup__form_type_bio"
             type="text"
             required
-            minlength="2"
-            maxlength="200"
-            autocomplete="off"
+            minLength="2"
+            maxLength="200"
+            autoсomplete="off"
           />
           <span className="popup__error popup__error_type_bio"></span>
         </PopupWithForm>
@@ -85,9 +85,9 @@ function App() {
           type="text"
           placeholder="Название"
           required
-          minlength="1"
-          maxlength="30"
-          autocomplete="off"
+          minLength="1"
+          maxLength="30"
+          autoсomplete="off"
         />
           <span className="popup__error popup__error_type_place"></span>
           <input
@@ -96,7 +96,7 @@ function App() {
             type="url"
             placeholder="Ссылка на картинку"
             required
-            autocomplete="off"
+            autoсomplete="off"
           />
           <span className="popup__error popup__error_type_link"></span>
         </PopupWithForm>
@@ -114,7 +114,7 @@ function App() {
           type="url"
           required
           placeholder="Ссылка на картинку"
-          autocomplete="off"
+          autoсomplete="off"
         />
         <span className="popup__error popup__error_type_link"></span>
         </PopupWithForm>

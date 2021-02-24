@@ -8,7 +8,7 @@ function ImagePopup({card, onClose}) {
     <div className={className}>
       <div className="popup__forms popup__forms_type_image">
         <button className="popup__close-button popup__close-button_type_image" type="reset" onClick={onClose}/>
-        <img src={card.link} alt="" className="popup__image" />
+        <img src={card.link} alt="Картинка в большом размере" className="popup__image" />
         <p className="popup__subtitle">{card.name}</p>
       </div>
     </div>
