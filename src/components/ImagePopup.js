@@ -1,5 +1,4 @@
 import React from 'react';
-import closeButtonPath from '../images/close-icon.svg';
 
 
 function ImagePopup({card, onClose}) {

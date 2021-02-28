@@ -94,39 +94,40 @@ class Api {
                 }
             })
     }
-    likeCard(id) {
+    changeLikeCardStatus(id, isLiked){
         const cardLikeURL = (this._cardsURL + `/likes/${id}`);
-        return fetch(cardLikeURL, {
-                method: 'PUT',
-                headers: {
-                    authorization: this._token
-                }
-            })
-            .then(res => {
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    return Promise.reject('Ошибка связи с сервером');
-                }
-            })
+        console.log(cardLikeURL);
+       if(isLiked){
+          return fetch(cardLikeURL, {
+                  method: 'DELETE',
+                  headers: {
+                      authorization: this._token
+                  }
+              })
+              .then(res => {
+                  if (res.ok) {
+                      return res.json();
+                  } else {
+                      return Promise.reject('Ошибка связи с сервером');
+                  }
+              })
+      }else{
+       return fetch(cardLikeURL, {
+               method: 'PUT',
+               headers: {
+                   authorization: this._token
+               }
+           })
+           .then(res => {
+               if (res.ok) {
+                   return res.json();
+               } else {
+                   return Promise.reject('Ошибка связи с сервером');
+               }
+           })
+       }
+      }
 
-    }
-    dislikeCard(id) {
-        const cardLikeURL = (this._cardsURL + `/likes/${id}`);
-        return fetch(cardLikeURL, {
-                method: 'DELETE',
-                headers: {
-                    authorization: this._token
-                }
-            })
-            .then(res => {
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    return Promise.reject('Ошибка связи с сервером');
-                }
-            })
-    }
     avatarUpload(url) {
         return fetch((this._userURL + `/avatar`), {
                 method: 'PATCH',
